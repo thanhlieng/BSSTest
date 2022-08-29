@@ -13,6 +13,7 @@ const Main = () => {
   }, []);
 
   const callApi = () => {
+    console.log('???');
     getData(data => setData(data));
   };
 

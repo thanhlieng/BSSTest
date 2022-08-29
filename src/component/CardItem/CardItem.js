@@ -15,23 +15,14 @@ class CardItem extends React.Component {
   render() {
     let data = this.state.data;
     return (
-      <View style={{width: 100, height: 200}}>
-        <CardFlip style={styles.card} ref={card => (this.card = card)}>
-          <TouchableOpacity onPress={() => this.card.flip()}>
-            <Image
-              source={{uri: data.avatar}}
-              style={{width: 100, height: 100}}></Image>
-            <Text style={styles.textName}>
-              {data.first_name + data.last_name}
-            </Text>
-            <Text numberOfLines={1} ellipsizeMode="tail">
-              {data.employment.title}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => this.card.flip()}>
-            <Text>CD</Text>
-          </TouchableOpacity>
-        </CardFlip>
+      <View style={{...styles.card}}>
+        <Image
+          source={{uri: data.avatar}}
+          style={{width: 100, height: 100}}></Image>
+        <Text style={styles.textName}>{data.first_name + data.last_name}</Text>
+        <Text numberOfLines={1} ellipsizeMode="tail">
+          {data.employment.title}
+        </Text>
       </View>
     );
   }
