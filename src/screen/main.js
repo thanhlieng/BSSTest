@@ -20,15 +20,8 @@ const Main = () => {
   const _renderItem = ({item, index}) => <CardItem data={item} key={index} />;
 
   return (
-    <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
-      <TouchableOpacity
-        onPress={callApi}
-        style={{
-          backgroundColor: colors.white,
-          padding: 10,
-          marginBottom: 10,
-          borderRadius: 10,
-        }}>
+    <View style={styles.container}>
+      <TouchableOpacity onPress={callApi} style={styles.button}>
         <Text>Call Api</Text>
       </TouchableOpacity>
       <FlatList

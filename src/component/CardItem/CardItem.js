@@ -64,51 +64,49 @@ class CardItem extends React.Component {
     let data = this.state.data;
     console.log(data);
     return (
-      <View style={styles.container}>
-        <View>
-          <TouchableOpacity
-            onPress={() => {
-              this.flipCard();
-            }}
-            style={{backgroundColor: 'transparent'}}>
-            <Animated.View
-              style={[
-                styles.flipCard,
-                frontAnimatedStyle,
-                {opacity: this.frontOpacity},
-              ]}>
-              <Image
-                source={{uri: data.avatar}}
-                style={{width: 100, height: 100}}></Image>
-              <Text style={styles.textName}>
-                {data.first_name + data.last_name}
-              </Text>
-              <Text numberOfLines={1} ellipsizeMode="tail">
-                {data.employment.title}
-              </Text>
-            </Animated.View>
+      <View style={styles.card}>
+        <TouchableOpacity
+          onPress={() => {
+            this.flipCard();
+          }}
+          style={{backgroundColor: 'transparent'}}>
+          <Animated.View
+            style={[
+              styles.flipCard,
+              frontAnimatedStyle,
+              {opacity: this.frontOpacity},
+            ]}>
+            <Image
+              source={{uri: data.avatar}}
+              style={{width: 100, height: 100}}></Image>
+            <Text style={styles.textName}>
+              {data.first_name + data.last_name}
+            </Text>
+            <Text numberOfLines={1} ellipsizeMode="tail">
+              {data.employment.title}
+            </Text>
+          </Animated.View>
 
-            <Animated.View
-              style={[
-                styles.flipCard,
-                styles.flipCardBack,
-                backAnimatedStyle,
-                {opacity: this.backOpacity},
-              ]}>
-              <Text style={styles.flipText}>
-                address : {data.address.street_address},{' '}
-                {data.address.street_name}, {data.address.city},{' '}
-                {data.address.state}
-                email: {data.email}
-                phone_number: {data.phone_number}
-              </Text>
-              <Text style={styles.flipText}>email: {data.email}</Text>
-              <Text style={styles.flipText}>
-                phone_number: {data.phone_number}
-              </Text>
-            </Animated.View>
-          </TouchableOpacity>
-        </View>
+          <Animated.View
+            style={[
+              styles.flipCard,
+              styles.flipCardBack,
+              backAnimatedStyle,
+              {opacity: this.backOpacity},
+            ]}>
+            <Text style={styles.flipText}>
+              address : {data.address.street_address},{' '}
+              {data.address.street_name}, {data.address.city},{' '}
+              {data.address.state}
+              email: {data.email}
+              phone_number: {data.phone_number}
+            </Text>
+            <Text style={styles.flipText}>email: {data.email}</Text>
+            <Text style={styles.flipText}>
+              phone_number: {data.phone_number}
+            </Text>
+          </Animated.View>
+        </TouchableOpacity>
       </View>
     );
   }

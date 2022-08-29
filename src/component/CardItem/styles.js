@@ -18,10 +18,9 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   flipCard: {
-    width: 200,
-    height: 200,
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: '100%',
+    // alignItems: 'center',
+    // justifyContent: 'center',
     backgroundColor: 'white',
     backfaceVisibility: 'hidden',
   },
