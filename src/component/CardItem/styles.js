@@ -13,4 +13,25 @@ export const styles = StyleSheet.create({
   textName: {
     fontWeight: '800',
   },
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  flipCard: {
+    width: 200,
+    height: 200,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    backfaceVisibility: 'hidden',
+  },
+  flipCardBack: {
+    backgroundColor: 'white',
+    position: 'absolute',
+    top: 0,
+  },
+  flipText: {
+    fontSize: 11,
+    color: 'black',
+  },
 });
